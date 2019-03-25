@@ -7,13 +7,7 @@ public class testDoor {
 	
 	public void doorOpen() {
 		// code to be added
-		
-		String theState = "close";
-		String expectedState = "close"
-		Door theDoorState = new Door ();
-		String actualState = theDoorState.
-		
-				assertEquals (theState,expectedState,actualState)
+	
 	}
 	
 	public void doorClose() {
@@ -21,3 +15,4 @@ public class testDoor {
 	}
 
 }
+
