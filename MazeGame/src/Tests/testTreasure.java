@@ -10,29 +10,20 @@ import static org.hamcrest.CoreMatchers.is;
 import org.hamcrest.Matcher;
 import org.junit.jupiter.api.Test;
 
+import main.Player;
+import main.Treasure;
+
 class testTreasure {
 
-	 Map<Integer, Integer> player = new HashMap<>();
-	 Map<Integer, Integer> treasure = new HashMap<>();
-	 Integer playerScore = 0;
 	
 	
 	@Test
-	public void confirmTreasure() {
-		player.put(5, 5);
-		treasure.put(5, 5);
-		assertThat(treasure, is(player));
+	public void confirmTreasureTest() {
 		
+		Player player = new Player(2,2);
+		Treasure treasure = new Treasure(2,2);
+		
+		assertEquals(2,player.getX());
+		assertEquals(2,player.getY());
 	}
-	@Test
-	public void incremetScore() {
-		player.put(5, 5);
-		treasure.put(5, 5);
-		Integer result = 1;
-		if(treasure.equals(player)) {
-			playerScore ++;
-		}
-		assertEquals(playerScore, result);		
-	}
-
 }
