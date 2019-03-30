@@ -1,37 +1,61 @@
 package main;
 
-import java.awt.Color;
-import java.awt.Rectangle;
+
+import java.awt.*;
+import javax.swing.JComponent;
+import java.awt.geom.*;
 
 public class Laser extends GameObject {
-	int activationTimer;
-	public Laser(int x, int y) {
+	
+	public Laser(int i, int j) {
 		this.x = x;
 		this.y = y;
-		this.type = 5;
-		this.color = Color.red;
-		this.dimx = 30;
-		this.dimy = 30;
-		activationTimer = 0;
+		 new DrawLaser();	
 	}
+	
+	
+	@SuppressWarnings("serial")
+	private class DrawLaser extends JComponent{
+		public void paint(Graphics g) {
+			Graphics2D gra2 = (Graphics2D)g;			
+			
+			
+			gra2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+						
+			Shape drawLine = new Line2D.Float(20, 90, 55, 55);
+			Shape drawLine2 = new Line2D.Float(50, 5, 100, 250);
+			Shape drawLine3 = new Line2D.Float(100, 120, 250, 250);
+			Shape drawLine4 = new Line2D.Float(400, 250, 120, 400);
+			Shape drawLine5 = new Line2D.Float(400, 5, 400, 250);
+			Shape drawLine6 = new Line2D.Float(450, 300, 200, 450);	
+			
+			
+			gra2.setPaint(Color.RED);
+			gra2.draw(drawLine);
+			gra2.draw(drawLine2);
+			gra2.draw(drawLine5);
+			
+				
+			
+			gra2.setPaint(Color.BLUE);
+			gra2.draw(drawLine3);
+			gra2.draw(drawLine4);
+			gra2.draw(drawLine6);
+			}			
+		}
+
+
 	@Override
 	public void tick() {
-		activationTimer += 1;
-		if(activationTimer == 40) {
-			if(color != Color.red) {
-				this.color = Color.red;
-				activationTimer = 0;
-			}else {
-				this.color = Color.pink;
-				activationTimer = 0;
-			}
-		}
+		// TODO Auto-generated method stub
 		
 	}
 
+
 	@Override
 	public Rectangle getBounds() {
-		return new Rectangle(x,y,32,32);
+		// TODO Auto-generated method stub
+		return null;
 	}
-	
-}
+	}
+
