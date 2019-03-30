@@ -7,7 +7,7 @@ import java.awt.geom.*;
 
 public class Laser extends GameObject {
 	
-	public Laser(int i, int j) {
+	public Laser(int x, int y) {
 		this.x = x;
 		this.y = y;
 		 new DrawLaser();	
