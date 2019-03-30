@@ -8,12 +8,12 @@ import java.awt.geom.*;
 public class Laser {
 	
 	public Laser() {
-		 new DrawThings();	
+		 new DrawLaser();	
 	}
 	
 	
 	@SuppressWarnings("serial")
-	private class DrawThings extends JComponent{
+	private class DrawLaser extends JComponent{
 		public void paint(Graphics g) {
 			Graphics2D gra2 = (Graphics2D)g;			
 			
