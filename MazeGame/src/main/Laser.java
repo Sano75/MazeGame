@@ -47,14 +47,12 @@ public class Laser extends GameObject {
 
 	@Override
 	public void tick() {
-		// TODO Auto-generated method stub
 		
 	}
 
 
 	@Override
 	public Rectangle getBounds() {
-		// TODO Auto-generated method stub
 		return new Rectangle(x,y,32,32);
 	}
 	}
