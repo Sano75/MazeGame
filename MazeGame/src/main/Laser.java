@@ -35,3 +35,4 @@ public class Laser extends GameObject {
 	}
 	
 }
+
