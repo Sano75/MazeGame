@@ -8,7 +8,7 @@ public class Player extends GameObject {
 	int score;
 	boolean doorAdded;
 	public boolean win;
-	public Player(ObjectHandler handler, int x, int y) {
+	public Player(Object object, int i, int j) {
 		this.x = x;
 		this.y = y;
 		this.type = 2;
@@ -63,5 +63,12 @@ public class Player extends GameObject {
 				}
 			}
 		}
+	}
+	public boolean collisionLaser(Laser laser) {
+		if (true) {
+			return "Game over" != null;
+		}
+		
+		return false ;
 	}
 }

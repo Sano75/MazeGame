@@ -5,9 +5,11 @@ import java.awt.*;
 import javax.swing.JComponent;
 import java.awt.geom.*;
 
-public class Laser {
+public class Laser extends GameObject {
 	
-	public Laser() {
+	public Laser(int i, int j) {
+		this.x = x;
+		this.y = y;
 		 new DrawLaser();	
 	}
 	
@@ -39,10 +41,22 @@ public class Laser {
 			gra2.draw(drawLine3);
 			gra2.draw(drawLine4);
 			gra2.draw(drawLine6);
-			}
-			
-			
+			}			
 		}
+
+
+	@Override
+	public void tick() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public Rectangle getBounds() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	}
 
 
