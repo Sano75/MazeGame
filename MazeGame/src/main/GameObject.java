@@ -2,6 +2,7 @@ package main;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Rectangle;
 
 public abstract class GameObject {
 	protected int x,y;
@@ -20,11 +21,16 @@ public abstract class GameObject {
 	public int getScore() {
 		return y;
 	}
+	public int getType() {
+		return type;
+	}
 	public abstract void tick();
+	
 	public void render(Graphics g) {
 		if(visible) {
 		g.setColor(color);
-		g.fillRect(x * 32,y * 32,32,32);
+		g.fillRect(x, y, 32, 32);
 		}
 	}
+	public abstract Rectangle getBounds();
 }

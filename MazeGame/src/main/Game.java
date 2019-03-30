@@ -15,8 +15,11 @@ public class Game extends Canvas implements Runnable{
 	
 	Game(){
 		new Window(this,width,height,"Maze Game");
+		
 		handler = new ObjectHandler();
-		handler.addObject(new Player(4,5));
+		handler.addObject(new Player(handler,5,5));
+		
+		
 	}public void start(){
 		running = true;
 		t = new Thread(this);
@@ -32,19 +35,36 @@ public class Game extends Canvas implements Runnable{
 		
 	}
 	public void run() { //GAME LOOP NEEDS REVISION, THREAD.SLEEP WITHOUT INTERPOLATION AND VIRTUAL SYNC IS NOT PREFFERED!
-		while(running) {
-			try {
-				update(); 
-				Thread.sleep(10);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-			
-		}
-		stop();
+			long lastTime = System.nanoTime();
+	        double amountOfTicks = 60.0;
+	        double ns = 1000000000 / amountOfTicks;
+	        double delta = 0;
+	        long timer = System.currentTimeMillis();
+	        while(running)
+	        {
+	                    long now = System.nanoTime();
+	                    delta += (now - lastTime) / ns;
+	                    lastTime = now;
+	                    while(delta >=1)
+	                            {
+	                                tick();
+	                                delta--;
+	                            }
+	                            if(running)
+	                                render();
+	                            if(System.currentTimeMillis() - timer > 1000)
+	                            {
+	                                timer += 1000;
+	                            }
+	        }  
+	        stop();
+		
 		
 	}
-	public void update() {
+	public void tick() {
+		handler.tick();
+	}
+	public void render() {
 		BufferStrategy bs = this.getBufferStrategy();
 		if(bs == null) {
 			this.createBufferStrategy(3);
@@ -53,7 +73,7 @@ public class Game extends Canvas implements Runnable{
 		Graphics g = bs.getDrawGraphics();
 		g.setColor(Color.gray);
 		g.fillRect(0,0,width,height);
-		handler.Update(g);
+		handler.render(g);
 		g.dispose();
 		bs.show();
 	}

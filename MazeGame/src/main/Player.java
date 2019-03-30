@@ -1,12 +1,19 @@
 package main;
 
 import java.awt.Color;
+import java.awt.Rectangle;
 
 public class Player extends GameObject {
-	public Player(int x, int y) {
+	ObjectHandler handler;
+	int score;
+	boolean doorAdded;
+	public Player(ObjectHandler handler, int x, int y) {
 		this.x = x;
 		this.y = y;
 		this.color = Color.cyan;
+		score = 5;
+		this.handler = handler;
+		doorAdded = false;
 	}
 	public void move(int direction) { // 0 = up, 1 = right, 2 = down, 3 = left;
 		switch(direction) {
@@ -27,6 +34,26 @@ public class Player extends GameObject {
 	@Override
 	public void tick() {
 		x+= 1;
-		
+		if(score == 5 && !doorAdded) {
+			handler.addObject(new Door(10,5));
+			doorAdded = true;
+		}
+		collision();
+	}
+	@Override
+	public Rectangle getBounds() {
+		// TODO Auto-generated method stub
+		return new Rectangle(x, y,32,32);
+	}
+	public void collision() {
+		for(int i = 0; i < handler.objects.size(); i++) {
+			GameObject temp = handler.objects.get(i);
+			if(getBounds().intersects(temp.getBounds()));
+				switch(temp.getType()) {
+				case 4:
+					System.out.println("YOU MADE IT OUT");
+					break;
+				}
+		}
 	}
 }
