@@ -9,6 +9,7 @@ public abstract class GameObject {
 	int score; //Shouldn't only the player have a score?
 	protected Color color;
 	boolean visible = true;
+
 	
 	public int getX() {
 		return x;

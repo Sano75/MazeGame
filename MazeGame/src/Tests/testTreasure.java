@@ -12,6 +12,8 @@ import org.junit.jupiter.api.Test;
 
 import main.Player;
 import main.Treasure;
+import main.treasureMethods;
+import static org.hamcrest.CoreMatchers.*;
 
 class testTreasure {
 
@@ -25,5 +27,24 @@ class testTreasure {
 		
 		assertEquals(2,player.getX());
 		assertEquals(2,player.getY());
+	}
+	
+	@Test
+	public void increaseScoreTest() {
+		
+		int playerCurrentScore = 0;
+		int playerNewScore = treasureMethods.incrementScore(1,1,1,1);
+		
+		assertThat(playerCurrentScore, is(not(playerNewScore)));
+		
+	}
+	
+	@Test
+	public void openDoorTest() {
+		int score = 1;
+		int currentPlayerScore = treasureMethods.incrementScore(1, 1, 1, 1);
+		boolean door = treasureMethods.openDoor(currentPlayerScore, score);
+		
+		assertEquals(true, door);
 	}
 }
