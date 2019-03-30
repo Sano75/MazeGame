@@ -6,4 +6,10 @@ public class Treasure extends GameObject {
 		this.y = y;
 	}
 
+	@Override
+	public void tick() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -1,9 +1,12 @@
 package main;
 
+import java.awt.Color;
+
 public class Player extends GameObject {
 	public Player(int x, int y) {
 		this.x = x;
 		this.y = y;
+		this.color = Color.cyan;
 	}
 	public void move(int direction) { // 0 = up, 1 = right, 2 = down, 3 = left;
 		switch(direction) {
@@ -21,7 +24,9 @@ public class Player extends GameObject {
 			break;
 		}
 	}
-	public void update() {
+	@Override
+	public void tick() {
+		x+= 1;
 		
 	}
 }

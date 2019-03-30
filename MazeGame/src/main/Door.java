@@ -5,4 +5,10 @@ public class Door extends GameObject {
 		this.x = x;
 		this.y = y;
 	}
+
+	@Override
+	public void tick() {
+		
+		
+	}
 }
