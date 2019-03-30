@@ -22,7 +22,7 @@ class testTreasure {
 	@Test
 	public void confirmTreasureTest() {
 		
-		Player player = new Player(2,2);
+		Player player = new Player(null, 2,2);
 		Treasure treasure = new Treasure(2,2);
 		
 		assertEquals(2,player.getX());

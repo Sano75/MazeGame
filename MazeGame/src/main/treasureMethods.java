@@ -12,6 +12,7 @@ public class treasureMethods {
 
 		//Player player = new Player(playerX, playerY);
 		Treasure treasure = new Treasure(treasureX, treasureY);
+		Player player = new Player(null, treasureX, treasureX);
 
 		if (player.getX() == treasure.getX() && player.getY() == treasure.getY()) {
 			playerScore++;
