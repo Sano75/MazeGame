@@ -4,7 +4,7 @@ import java.awt.Graphics;
 import java.util.ArrayList;
 
 public class ObjectHandler {
-	ArrayList<GameObject> objects = new ArrayList<GameObject>();
+	public ArrayList<GameObject> objects = new ArrayList<GameObject>();
 	
 	public void tick() {
 		for(int i = 0; i < objects.size(); i++) {

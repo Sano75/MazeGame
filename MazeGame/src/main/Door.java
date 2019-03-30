@@ -13,10 +13,9 @@ public class Door extends GameObject {
 
 	@Override
 	public void tick() {
-		
 	}
 	@Override
 	public Rectangle getBounds() {
-		return new Rectangle(x,y,32,32);
+		return new Rectangle(this.x,this.y,32,32);
 	}
 }
