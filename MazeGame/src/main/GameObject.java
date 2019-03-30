@@ -6,11 +6,12 @@ import java.awt.Rectangle;
 
 public abstract class GameObject {
 	protected int x,y;
+	protected int dimx = 32;
+	protected int dimy = 32;
 	protected int type; // 1 = wall, 2 = player, 3 = treasure, 4 = door, 5 = Laser
 	int score; //Shouldn't only the player have a score?
 	protected Color color;
 	boolean visible = true;
-
 	
 	public int getX() {
 		return x;
@@ -29,7 +30,7 @@ public abstract class GameObject {
 	public void render(Graphics g) {
 		if(visible) {
 		g.setColor(color);
-		g.fillRect(x, y, 32, 32);
+		g.fillRect(x, y, dimx, dimy);
 		}
 	}
 	public abstract Rectangle getBounds();

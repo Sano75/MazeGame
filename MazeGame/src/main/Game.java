@@ -14,10 +14,11 @@ public class Game extends Canvas implements Runnable{
 	ObjectHandler handler;
 	
 	Game(){
-		new Window(this,width,height,"Maze Game");
-		
 		handler = new ObjectHandler();
-		handler.addObject(new Player(handler,5,5));
+		MapLoader mLoader = new MapLoader(handler);
+		mLoader.loadMap(1);
+		this.addKeyListener(new KeyInput(handler));
+		new Window(this,width,height,"Maze Game");
 		
 		
 	}public void start(){

@@ -6,6 +6,8 @@ import java.awt.Rectangle;
 public class Player extends GameObject {
 	ObjectHandler handler;
 	int score;
+	int priorY;
+	int priorX;
 	boolean doorAdded;
 	public boolean win;
 	public Player(ObjectHandler handler, int x, int y) {
@@ -22,26 +24,29 @@ public class Player extends GameObject {
 	public void move(int direction) { // 0 = up, 1 = right, 2 = down, 3 = left;
 		switch(direction) {
 		case 0:
-			this.y --;
+			priorY = this.y;
+			priorX = this.x;
+			this.y -= 32;
 			break;
 		case 1:
-			this.x++;
+			priorY = this.y;
+			priorX = this.x;
+			this.x += 32;
 			break;
 		case 2:
-			this.y++;
+			priorY = this.y;
+			priorX = this.x;
+			this.y += 32;
 			break;
 		case 3:
-			this.x--;
+			priorY = this.y;
+			priorX = this.x;
+			this.x -= 32;
 			break;
 		}
 	}
 	@Override
 	public void tick() {
-		x+= 1;
-		if(score == 5 && !doorAdded) {
-			handler.addObject(new Door(10,5));
-			doorAdded = true;
-		}
 		collision();
 	}
 	@Override
@@ -52,14 +57,19 @@ public class Player extends GameObject {
 		for(int i = 0; i < handler.objects.size(); i++) {
 			GameObject temp = handler.objects.get(i);
 			
-			if(this.getBounds().intersects(temp.getBounds())) {
-				switch(temp.getType()) {
-					case 4:
-						System.out.println("YOU MADE IT OUT");
-						win = true;
-						break;
-					case 2:
-						break;
+			if(temp.getType() != 2) {
+				if(getBounds().intersects(temp.getBounds())) {
+					switch(temp.getType()) { 
+						case 4:
+							System.out.println("YOU MADE IT OUT");
+							win = true;
+							break;
+						case 1:
+							this.y = priorY;
+							this.x = priorX;
+							System.out.println("Collided with the wall");
+							break;
+					}
 				}
 			}
 		}
