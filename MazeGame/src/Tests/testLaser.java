@@ -1,7 +1,11 @@
 package Tests;
 import static org.junit.Assert.assertEquals;
 
+
 import org.junit.*;
+
+import main.Laser;
+import main.Player;
 
 
 
@@ -15,7 +19,13 @@ public class testLaser {
 	
 	@Test
 	public void GoThroughLaser() {
-		//Code to be added
+		Player player = new Player(null, 2,2);
+		
+		Laser laser = new Laser(2,2);
+		
+		assertEquals(player.collisionLaser(laser), true);
+		
+		
 	}
 
 }
