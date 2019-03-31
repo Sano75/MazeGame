@@ -17,7 +17,7 @@ public class testCollision {
 		//A
 		ObjectHandler handler = new ObjectHandler();
 		handler.addObject(new Player(handler,3,4)); // index 0
-		handler.addObject(new Door(3*32, 4)); // index 1
+		handler.addObject(new Door(true,3*32, 4)); // index 1
 		
 		//Rectangle is 32 wide and high
 		//A
@@ -30,7 +30,7 @@ public class testCollision {
 		//A
 		ObjectHandler handler = new ObjectHandler();
 		handler.addObject(new Player(handler,5 * 32,6)); // 0
-		handler.addObject(new Door(5*32, 6)); //1
+		handler.addObject(new Door(true,5*32, 6)); //1
 		
 		//Rectangle is 32 wide and high
 		
@@ -44,7 +44,7 @@ public class testCollision {
 		//A
 		ObjectHandler handler = new ObjectHandler();
 		handler.addObject(new Player(handler,7 * 32, 8)); // 0
-		handler.addObject(new Door(7 * 32, 8)); //1
+		handler.addObject(new Door(true,7 * 32, 8)); //1
 		//A
 		Player player = (Player) handler.objects.get(0);
 		player.collision(); 
