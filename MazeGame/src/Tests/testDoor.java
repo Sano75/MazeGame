@@ -10,11 +10,26 @@ public class testDoor {
 	
 	
 	@Test
-	public void openDoorTest(){	
+		@Test
+	public void doorTest(){	
 			
-		int playerScore = 8;		
-		int doorAvailable = 1;		
-		assertEquals(playerScore,doorAvailable);
+		//arrange
+		Door door = new Door (2,2);
+		//act
+		int actual = door.getX();
+		//assert
+			assertEquals (actual, 2);
+	}
+	@Test
+	public void doorTest2() {
+		// arrange
+		Door door = new Door (3,3);
+		// act
+		int actual = door.getY();
+		
+		// assert
+		assertEquals (actual, 3);
+		
 		
 	}
 
