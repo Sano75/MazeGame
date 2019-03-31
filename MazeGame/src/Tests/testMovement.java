@@ -16,8 +16,8 @@ public class testMovement {
 		//
 		player.move(1);// 0 = up, 1 = right, 2 = down, 3 = left;
 		//A
-		assertEquals(3,player.getX());
-		assertEquals(2,player.getY());
+		assertEquals(3*32,player.getX());
+		assertEquals(2*32,player.getY());
 		
 	}
 	@Test
@@ -27,8 +27,8 @@ public class testMovement {
 		//
 		player.move(0);// 0 = up, 1 = right, 2 = down, 3 = left;
 		//A
-		assertEquals(4,player.getX());
-		assertEquals(4,player.getY());
+		assertEquals(4*32,player.getX());
+		assertEquals(4*32,player.getY());
 		
 	}
 	@Test
@@ -38,8 +38,8 @@ public class testMovement {
 		//
 		player.move(2);// 0 = up, 1 = right, 2 = down, 3 = left;
 		//A
-		assertEquals(2,player.getX());
-		assertEquals(2,player.getY());
+		assertEquals(2*32,player.getX());
+		assertEquals(2*32,player.getY());
 		
 	}
 	@Test
@@ -49,8 +49,8 @@ public class testMovement {
 		//
 		player.move(3);// 0 = up, 1 = right, 2 = down, 3 = left;
 		//A
-		assertEquals(6,player.getX());
-		assertEquals(3,player.getY());
+		assertEquals(6*32,player.getX());
+		assertEquals(3*32,player.getY());
 		
 	}
 }

@@ -11,8 +11,8 @@ public class Player extends GameObject {
 	boolean doorAdded;
 	public boolean win;
 	public Player(ObjectHandler handler, int x, int y) {
-		this.x = x * 32;
-		this.y = y * 32;
+		this.x = x * dimx;
+		this.y = y * dimy;
 		this.type = 2;
 		this.color = Color.cyan;
 		score = 5;
