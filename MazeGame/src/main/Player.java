@@ -74,7 +74,6 @@ public class Player extends GameObject {
 							Treasure treasure = (Treasure) temp;
 							//treasure.treasureMethods;
 							handler.objects.remove(i);
-							break;
 						case 5:
 							Laser laser = (Laser) temp;
 							if(laser.activeLaser()) {
