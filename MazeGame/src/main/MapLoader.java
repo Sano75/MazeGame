@@ -5,8 +5,9 @@ public class MapLoader {
 	int [][] map1;
 	int [][] activeMap;
 	boolean running;
-	public MapLoader(boolean running, ObjectHandler handler) {
-		this.running = running;
+	Game gum;
+	public MapLoader(Game gum, ObjectHandler handler) {
+		this.gum = gum;
 		this.handler = handler;
 		int[][] map1 = { //22 wide, 17 high
 						{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
@@ -52,7 +53,7 @@ public class MapLoader {
 					handler.addObject(new Treasure(i, j));
 					break;
 				case 4:
-					handler.addObject(new Door(running,i, j));
+					handler.addObject(new Door(gum,i, j));
 					break;
 				case 5: 
 					handler.addObject(new Laser(i, j));

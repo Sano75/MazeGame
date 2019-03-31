@@ -64,6 +64,7 @@ public class Player extends GameObject {
 							System.out.println("YOU MADE IT OUT");
 							win = true;
 							Door door = (Door) temp;
+							door.doorEnter();
 							break;
 						case 1: //Wall
 							this.y = priorY;

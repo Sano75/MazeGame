@@ -13,7 +13,7 @@ public class testDoor {
 	public void doorTest(){	
 			
 		//arrange
-		Door door = new Door (true,2,2);
+		Door door = new Door (null,2,2);
 		//act
 		int actual = door.getX();
 		//assert
@@ -22,7 +22,7 @@ public class testDoor {
 	@Test
 	public void doorTest2() {
 		// arrange
-		Door door = new Door (true,3,3);
+		Door door = new Door (null,3,3);
 		// act
 		int actual = door.getY();
 		

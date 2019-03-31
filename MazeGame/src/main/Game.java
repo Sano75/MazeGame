@@ -8,14 +8,14 @@ import java.awt.image.BufferStrategy;
 public class Game extends Canvas implements Runnable{
 	
 	private static final long serialVersionUID = -1997325596863821774L;
-	protected boolean running;
+	public boolean running;
 	private Thread t;
 	private static final int width = 1920, height = 1080;
 	ObjectHandler handler;
 	
 	Game(){
 		handler = new ObjectHandler();
-		MapLoader mLoader = new MapLoader(running,handler);
+		MapLoader mLoader = new MapLoader(this,handler);
 		mLoader.loadMap(1);
 		this.addKeyListener(new KeyInput(handler));
 		new Window(this,width,height,"Maze Game");
