@@ -2,12 +2,12 @@ package main;
 
 
 import java.awt.*;
-import javax.swing.JComponent;
-import java.awt.geom.*;
+//import javax.swing.JComponent;
+//import java.awt.geom.*;
 
 public class Laser extends GameObject {
 	public int activationTimer;
-	boolean active;
+	public boolean active;
 	public Laser(int x, int y) {
 		dimx = 24;
 		dimy = 24;
@@ -59,7 +59,19 @@ public class Laser extends GameObject {
 	public void tick() {
 		activationTimer += 1;
 		if(activationTimer == 40) {
-			if(color != Color.red) {
+			ToggleLaser();
+		}
+	}
+	@Override
+	public Rectangle getBounds() {
+		return new Rectangle(x,y,32,32);
+	}
+	public boolean activeLaser() {
+		return active;
+		
+	}
+	public void ToggleLaser() {
+		if(color != Color.red) {
 				this.color = Color.red;
 				active = true;
 				activationTimer = 0;
@@ -68,16 +80,6 @@ public class Laser extends GameObject {
 				active = false;
 				activationTimer = 0;
 			}
-		}
-		
-	
-	}
-	@Override
-	public Rectangle getBounds() {
-		return new Rectangle(x,y,32,32);
-	}
-	public boolean activeLaser() {
-		return active;
 		
 	}
 }

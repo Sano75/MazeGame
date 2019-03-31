@@ -10,7 +10,7 @@ public abstract class GameObject {
 	protected int dimy = 32;
 	protected int type; // 1 = wall, 2 = player, 3 = treasure, 4 = door, 5 = Laser
 	protected Color color;
-	boolean visible = true;
+	public boolean visible = true;
 	
 	public int getX() {
 		return x;

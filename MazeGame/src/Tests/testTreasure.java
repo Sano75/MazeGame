@@ -2,18 +2,15 @@ package Tests;
 
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
-import java.util.HashMap;
-import java.util.Map;
-import static org.hamcrest.CoreMatchers.is;
-import org.hamcrest.Matcher;
 import org.junit.jupiter.api.Test;
 
+import main.Door;
+import main.ObjectHandler;
 import main.Player;
 import main.Treasure;
-import main.treasureMethods;
-import static org.hamcrest.CoreMatchers.*;
 
 class testTreasure {
 
@@ -31,21 +28,37 @@ class testTreasure {
 	
 	@Test
 	public void increaseScoreTest() {
+		//A
+		ObjectHandler handler = new ObjectHandler();
+		handler.addObject(new Player(handler, 2,2));// 0
+		handler.addObject(new Treasure(2,2)); //1
+		Player player = (Player) handler.objects.get(0);
+		player.setMinimumTreasures(5);
+		//A
+		assertEquals(0,player.score);
+		player.collision();
+		assertEquals(1,player.score);
 		
-		int playerCurrentScore = 0;
-		int playerNewScore = treasureMethods.incrementScore(1,1,1,1);
 		
-		assertThat(playerCurrentScore, is(not(playerNewScore)));
+		
 		
 	}
 	
 	@Test
 	public void openDoorTest() {
 		//A
-		int score = 1;//get score from player instead
-		int currentPlayerScore = treasureMethods.incrementScore(1, 1, 1, 1);
-		boolean door = treasureMethods.openDoor(currentPlayerScore, score);
+		ObjectHandler handler = new ObjectHandler();
+		handler.addObject(new Player(handler, 5,2));// 0
+		handler.addObject(new Treasure(5,2)); //1
+		handler.addObject(new Door(null,6,7));//2
+		Player player = (Player) handler.objects.get(0);
+		Door door = (Door) handler.objects.get(2);
+		player.setMinimumTreasures(1);
+		player.hiddenDoor = door;
+		//A
+		assertFalse(door.visible);
+		player.collision(); //Collides with Treasure and score becomes 1 which is minimum for doorOpening
+		assertTrue(door.visible);
 		
-		assertEquals(true, door);
 	}
 }

@@ -7,13 +7,13 @@ import java.awt.Rectangle;
 
 public class Player extends GameObject {
 	ObjectHandler handler;
-	int score = 0;
+	public int score = 0;
 	int priorY;
 	int priorX;
 	boolean doorAdded;
 	public boolean win;
 	int minimumTreasures;
-	Door visibleDoor;
+	public Door hiddenDoor;
 	public Player(ObjectHandler handler, int x, int y) {
 		this.x = x * dimx;
 		this.y = y * dimy;
@@ -70,7 +70,7 @@ public class Player extends GameObject {
 		for(int i = 0; i < handler.objects.size(); i++) {
 			GameObject temp = handler.objects.get(i);
 			if(temp.getType() == 4) {
-				visibleDoor = (Door) temp;
+				hiddenDoor = (Door) temp;
 			}
 			if(temp.getType() != 2) {
 				if(getBounds().intersects(temp.getBounds())) {
@@ -86,12 +86,12 @@ public class Player extends GameObject {
 							System.out.println("Collided with the wall");
 							break;
 						case 3:
-							Treasure treasure = (Treasure) temp;
-							//treasure.treasureMethods;
+							//Treasure treasure = (Treasure) temp;
+							//treasure.treasureMethods
 							handler.objects.remove(i);
 							score++;
 							if(score >= minimumTreasures) {
-								visibleDoor.setVisible();
+								hiddenDoor.setVisible();
 							}
 							break;
 						case 5:
