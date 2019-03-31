@@ -6,7 +6,7 @@ import javax.swing.JComponent;
 import java.awt.geom.*;
 
 public class Laser extends GameObject {
-	int activationTimer;
+	public int activationTimer;
 	boolean active;
 	public Laser(int x, int y) {
 		dimx = 24;

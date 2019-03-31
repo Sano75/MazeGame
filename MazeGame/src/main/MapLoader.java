@@ -7,9 +7,9 @@ public class MapLoader {
 	boolean running;
 	int TreasureCount;
 	Player player;
-	Game gum;
-	public MapLoader(Game gum, ObjectHandler handler) {
-		this.gum = gum;
+	Game game;
+	public MapLoader(Game game, ObjectHandler handler) {
+		this.game = game;
 		this.handler = handler;
 		int[][] map1 = { //22 wide, 17 high
 						{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
@@ -58,7 +58,7 @@ public class MapLoader {
 					TreasureCount++;
 					break;
 				case 4:
-					handler.addObject(new Door(gum,i, j));
+					handler.addObject(new Door(game,i, j));
 					break;
 				case 5: 
 					handler.addObject(new Laser(i, j));
