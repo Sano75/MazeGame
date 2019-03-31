@@ -58,7 +58,7 @@ public class Game extends Canvas implements Runnable{
 	                                timer += 1000;
 	                            }
 	        }
-	        stop();
+	       stop();
 		
 		
 	}
