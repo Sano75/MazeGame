@@ -18,9 +18,6 @@ public abstract class GameObject {
 	public int getY() {
 		return y;
 	}
-	public int getScore() {
-		return y;
-	}
 	public int getType() {
 		return type;
 	}
