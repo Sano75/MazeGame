@@ -73,7 +73,8 @@ public class Player extends GameObject {
 							break;
 						case 3:
 							Treasure treasure = (Treasure) temp;
-							//treasure.treasuremethods
+							//treasure.treasureMethods;
+							handler.objects.remove(i);
 							break;
 							
 					}

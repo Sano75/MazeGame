@@ -6,10 +6,11 @@ import javax.swing.JComponent;
 import java.awt.geom.*;
 
 public class Laser extends GameObject {
-	
+	int activationTimer;
 	public Laser(int x, int y) {
 		this.x = x * 32;
 		this.y = y * 32;
+		this.color = Color.red;
 		 new DrawLaser();	
 	}
 	
