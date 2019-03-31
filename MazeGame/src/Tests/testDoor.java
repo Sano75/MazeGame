@@ -17,7 +17,7 @@ public class testDoor {
 		//act
 		int actual = door.getX();
 		//assert
-			assertEquals (actual, 2);
+			assertEquals (2 * 32, actual);
 	}
 	@Test
 	public void doorTest2() {
@@ -27,7 +27,7 @@ public class testDoor {
 		int actual = door.getY();
 		
 		// assert
-		assertEquals (actual, 3);
+		assertEquals (3* 32, actual);
 		
 		
 	}

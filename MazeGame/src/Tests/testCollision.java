@@ -59,7 +59,9 @@ public class testCollision {
 		handler.addObject(new Player(handler,4,4));
 		handler.addObject(new Wall(5,4));
 		Player player = (Player)handler.objects.get(0);
+		//A
 		player.move(1); //1 = Right movement
+		//A
 		assertEquals(5*32,player.getX());
 		player.collision(); //method to check if player is colliding with a wall
 		assertEquals(4*32, player.getX()); //as collision has now been called, the player has been pushed back to where it was before entering the wall;

@@ -63,6 +63,7 @@ public class Player extends GameObject {
 						case 4: //Door
 							System.out.println("YOU MADE IT OUT");
 							win = true;
+							Door door = (Door) temp;
 							break;
 						case 1: //Wall
 							this.y = priorY;
@@ -71,6 +72,7 @@ public class Player extends GameObject {
 							break;
 						case 3:
 							Treasure treasure = (Treasure) temp;
+							//treasure.treasuremethods
 							break;
 							
 					}
