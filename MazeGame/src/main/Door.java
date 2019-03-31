@@ -5,8 +5,8 @@ import java.awt.Rectangle;
 
 public class Door extends GameObject {	
 	public  Door(int x, int y) {
-		this.x = x;
-		this.y = y;
+		this.x = x * 32;
+		this.y = y * 32;
 		this.type = 4;
 		this.color = Color.green;
 	}

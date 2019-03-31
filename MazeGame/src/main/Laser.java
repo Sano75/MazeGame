@@ -8,8 +8,8 @@ import java.awt.geom.*;
 public class Laser extends GameObject {
 	
 	public Laser(int x, int y) {
-		this.x = x;
-		this.y = y;
+		this.x = x * 32;
+		this.y = y * 32;
 		 new DrawLaser();	
 	}
 	

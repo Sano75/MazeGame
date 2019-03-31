@@ -41,19 +41,19 @@ public class MapLoader {
 			for(int j = 0; j < 17; j++) {
 				switch(activeMap[j][i]) {
 				case 1:
-					handler.addObject(new Wall(i * 32 + 32, j * 32 + 32));
+					handler.addObject(new Wall(i + 32, j + 32));
 					break;
 				case 2:
-					handler.addObject(new Player(handler,i * 32 + 32, j * 32 + 32));
+					handler.addObject(new Player(handler,i+ 32, j + 32));
 					break;
 				case 3:
-					handler.addObject(new Treasure(i * 32 + 32, j * 32 + 32));
+					handler.addObject(new Treasure(i + 32, j + 32));
 					break;
 				case 4:
-					handler.addObject(new Door(i * 32 + 32, j * 32 + 32));
+					handler.addObject(new Door(i + 32, j + 32));
 					break;
 				case 5: 
-					handler.addObject(new Laser(i * 32 + 32, j * 32 +32));
+					handler.addObject(new Laser(i + 32, j + 32));
 					break;
 			}
 			}
