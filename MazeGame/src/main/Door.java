@@ -4,13 +4,11 @@ import java.awt.Color;
 import java.awt.Rectangle;
 
 public class Door extends GameObject{
-
-    boolean visible = false;
     Game game;
     
     public  Door(Game game,int x, int y) {
-
-
+    	
+    	this.visible = false;
         this.game = game;
         this.x = x * 32;
         this.y = y * 32;
@@ -23,7 +21,7 @@ public class Door extends GameObject{
     
     public void doorEnter() {
         
-            if (visible)
+            if (this.visible)
             {
             	System.out.println("YOU MADE IT OUT");
                 game.stop();
@@ -33,7 +31,7 @@ public class Door extends GameObject{
             }
     
     public void visible() {
-        visible = true;
+        this.visible = true;
     }
 
     @Override
