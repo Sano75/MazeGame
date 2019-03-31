@@ -41,7 +41,8 @@ class testTreasure {
 	
 	@Test
 	public void openDoorTest() {
-		int score = 1;
+		//A
+		int score = 1;//get score from player instead
 		int currentPlayerScore = treasureMethods.incrementScore(1, 1, 1, 1);
 		boolean door = treasureMethods.openDoor(currentPlayerScore, score);
 		

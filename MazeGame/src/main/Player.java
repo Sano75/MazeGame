@@ -69,6 +69,10 @@ public class Player extends GameObject {
 							this.x = priorX;
 							System.out.println("Collided with the wall");
 							break;
+						case 3:
+							Treasure treasure = (Treasure) temp;
+							break;
+							
 					}
 				}
 			}

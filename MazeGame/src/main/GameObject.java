@@ -9,7 +9,6 @@ public abstract class GameObject {
 	protected int dimx = 32;
 	protected int dimy = 32;
 	protected int type; // 1 = wall, 2 = player, 3 = treasure, 4 = door, 5 = Laser
-	int score; //Shouldn't only the player have a score?
 	protected Color color;
 	boolean visible = true;
 	
