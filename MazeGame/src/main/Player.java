@@ -5,17 +5,17 @@ import java.awt.Rectangle;
 
 public class Player extends GameObject {
 	ObjectHandler handler;
-	int score;
+	int score = 0;
 	int priorY;
 	int priorX;
 	boolean doorAdded;
 	public boolean win;
+	int minimumTreasures = 1;
 	public Player(ObjectHandler handler, int x, int y) {
 		this.x = x * dimx;
 		this.y = y * dimy;
 		this.type = 2;
 		this.color = Color.cyan;
-		score = 5;
 		this.handler = handler;
 		doorAdded = false;
 		win = false;
@@ -74,6 +74,11 @@ public class Player extends GameObject {
 							Treasure treasure = (Treasure) temp;
 							//treasure.treasureMethods;
 							handler.objects.remove(i);
+							score++;
+							if(score >= minimumTreasures) {
+								Door visibleDoor = (Door) temp;
+								visibleDoor.setVisible();
+							}
 							break;
 						case 5:
 							Laser laser = (Laser) temp;
