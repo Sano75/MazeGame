@@ -19,7 +19,8 @@ public class Laser extends GameObject {
 		this.color = Color.red;
 		activationTimer = 0;
 		active = true;
-		 new DrawLaser();	
+	}
+		 /*new DrawLaser();	
 	}
 	
 	
@@ -53,7 +54,7 @@ public class Laser extends GameObject {
 			}			
 		}
 
-
+	*/
 	@Override
 	public void tick() {
 		activationTimer += 1;

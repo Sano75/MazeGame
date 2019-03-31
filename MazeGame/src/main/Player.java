@@ -1,6 +1,8 @@
 package main;
 
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.Rectangle;
 
 public class Player extends GameObject {
@@ -51,6 +53,16 @@ public class Player extends GameObject {
 		collision();
 	}
 	@Override
+	public void render(Graphics g) {
+		if(visible) {
+		g.setColor(color);
+		g.fillRect(x + xoffset , y + yoffset, dimx, dimy);
+		g.setColor(Color.yellow);
+		g.setFont(new Font("TimesRoman",Font.BOLD, 20));
+		g.drawString("T:" + score, x, y - 10);
+		}
+	}
+	@Override
 	public Rectangle getBounds() {
 		return new Rectangle(x, y,32,32);
 	}
@@ -94,13 +106,13 @@ public class Player extends GameObject {
 			}
 		}
 	}
-	public boolean collisionLaser(Laser laser) {
+	/*public boolean collisionLaser(Laser laser) {
 		if (true) {
 			return "Game over" != null;
 		}
 		
 		return false;
-	}
+	}*/
 	public void setMinimumTreasures(int treasureCount) {
 		minimumTreasures = treasureCount;
 	}
