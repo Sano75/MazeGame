@@ -25,6 +25,7 @@ public class Door extends GameObject{
         
             if (visible)
             {
+            	System.out.println("YOU MADE IT OUT");
                 game.stop();
             }
                 

@@ -61,7 +61,6 @@ public class Player extends GameObject {
 				if(getBounds().intersects(temp.getBounds())) {
 					switch(temp.getType()) { 
 						case 4: //Door
-							System.out.println("YOU MADE IT OUT");
 							win = true;
 							Door door = (Door) temp;
 							door.doorEnter();
