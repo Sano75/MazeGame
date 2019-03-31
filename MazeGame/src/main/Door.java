@@ -30,7 +30,7 @@ public class Door extends GameObject{
             
             }
     
-    public void visible() {
+    public void setVisible() {
         this.visible = true;
     }
 
