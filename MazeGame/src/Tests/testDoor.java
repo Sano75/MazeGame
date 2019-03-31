@@ -10,7 +10,6 @@ public class testDoor {
 	
 	
 	@Test
-		@Test
 	public void doorTest(){	
 			
 		//arrange
