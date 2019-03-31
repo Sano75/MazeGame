@@ -66,7 +66,7 @@ public class MapLoader {
 			}
 			}
 		}
-		//player.setTreasureCount();
+	player.setMinimumTreasures(TreasureCount);
 	}
 		
 	
