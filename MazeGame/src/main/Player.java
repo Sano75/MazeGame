@@ -60,11 +60,11 @@ public class Player extends GameObject {
 			if(temp.getType() != 2) {
 				if(getBounds().intersects(temp.getBounds())) {
 					switch(temp.getType()) { 
-						case 4:
+						case 4: //Door
 							System.out.println("YOU MADE IT OUT");
 							win = true;
 							break;
-						case 1:
+						case 1: //Wall
 							this.y = priorY;
 							this.x = priorX;
 							System.out.println("Collided with the wall");
