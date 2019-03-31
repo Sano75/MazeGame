@@ -25,8 +25,8 @@ class testTreasure {
 		Player player = new Player(null, 2,2);
 		Treasure treasure = new Treasure(2,2);
 		
-		assertEquals(2,player.getX());
-		assertEquals(2,player.getY());
+		assertEquals(treasure.getX(),player.getX()); //The game is on a 32 * 32 grid
+		assertEquals(treasure.getY(),player.getY());
 	}
 	
 	@Test
