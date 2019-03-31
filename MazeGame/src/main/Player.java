@@ -76,6 +76,12 @@ public class Player extends GameObject {
 							//treasure.treasureMethods;
 							handler.objects.remove(i);
 							break;
+						case 5:
+							Laser laser = (Laser) temp;
+							if(laser.activeLaser()) {
+								handler.objects.remove(this);
+							}
+							break;
 							
 					}
 				}
@@ -87,7 +93,7 @@ public class Player extends GameObject {
 			return "Game over" != null;
 		}
 		
-		return false ;
+		return false;
 	}
 }
 

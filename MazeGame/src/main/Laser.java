@@ -7,10 +7,18 @@ import java.awt.geom.*;
 
 public class Laser extends GameObject {
 	int activationTimer;
+	boolean active;
 	public Laser(int x, int y) {
+		dimx = 24;
+		dimy = 24;
+		this.xoffset = 4;
+		this.yoffset = 4;
 		this.x = x * 32;
 		this.y = y * 32;
+		this.type = 5;
 		this.color = Color.red;
+		activationTimer = 0;
+		active = true;
 		 new DrawLaser();	
 	}
 	
@@ -48,13 +56,28 @@ public class Laser extends GameObject {
 
 	@Override
 	public void tick() {
+		activationTimer += 1;
+		if(activationTimer == 40) {
+			if(color != Color.red) {
+				this.color = Color.red;
+				active = true;
+				activationTimer = 0;
+			}else {
+				this.color = Color.pink;
+				active = false;
+				activationTimer = 0;
+			}
+		}
 		
+	
 	}
-
-
 	@Override
 	public Rectangle getBounds() {
 		return new Rectangle(x,y,32,32);
 	}
+	public boolean activeLaser() {
+		return active;
+		
 	}
+}
 

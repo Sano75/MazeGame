@@ -5,6 +5,8 @@ public class MapLoader {
 	int [][] map1;
 	int [][] activeMap;
 	boolean running;
+	int TreasureCount;
+	Player player;
 	Game gum;
 	public MapLoader(Game gum, ObjectHandler handler) {
 		this.gum = gum;
@@ -47,10 +49,13 @@ public class MapLoader {
 					handler.addObject(new Wall(i, j));
 					break;
 				case 2:
-					handler.addObject(new Player(handler,i, j));
+					player = new Player(handler,i, j);
+					handler.addObject(player);
+					
 					break;
 				case 3:
 					handler.addObject(new Treasure(i, j));
+					TreasureCount++;
 					break;
 				case 4:
 					handler.addObject(new Door(gum,i, j));
@@ -61,6 +66,7 @@ public class MapLoader {
 			}
 			}
 		}
+		//player.setTreasureCount();
 	}
 		
 	
